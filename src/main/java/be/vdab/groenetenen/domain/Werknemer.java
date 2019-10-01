@@ -13,8 +13,12 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "werknemers")
+@NamedEntityGraph(name = Werknemer.MET_FILIAAL,
+attributeNodes = @NamedAttributeNode("filiaal"))
 public class Werknemer implements Serializable {
     private static final long serialVersionUID = 1L;
+    public static final String MET_FILIAAL="Werknemer.metFiliaal";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
