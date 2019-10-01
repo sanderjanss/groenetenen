@@ -35,6 +35,7 @@ public class Werknemer implements Serializable {
     @NumberFormat(style= NumberFormat.Style.NUMBER)
     @Digits(integer = 10, fraction = 2)
     private BigDecimal wedde;
+    @Column(unique = true)
     private long rijksregisterNr;
 // je maakt getters alle private variabelen, behalve voor serialVersionUID
 // Je maakt hashCode en equals op basis van rijksregisterNr
