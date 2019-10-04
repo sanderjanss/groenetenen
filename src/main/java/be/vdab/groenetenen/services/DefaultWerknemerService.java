@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED)
+@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
 public class DefaultWerknemerService implements WerknemerService {
     private final WerknemerRepository werknemerRepository;
 
