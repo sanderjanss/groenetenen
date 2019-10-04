@@ -1,9 +1,10 @@
+for (var foutElement of document.querySelectorAll(".verborgenFout")) {
+    foutElement.style.display = "none";
+}
 document.getElementById("zoeken").addEventListener("click", function() {
 document.getElementById("naam").innerHTML = "";
 document.getElementById("adres").innerHTML = "";
-//     for (var foutElement of document.querySelectorAll(".verborgenFout")) {
-// foutElement.style.display = "none";
-//     }
+
     var idElement = document.getElementById("id");
 if (! idElement.checkValidity()) {
 document.getElementById("ongeldigeId").style.display = "block";
