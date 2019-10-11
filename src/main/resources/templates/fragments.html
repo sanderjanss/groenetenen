@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<html lang="nl" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head(title)">
     <link rel="icon" th:href="@{/img/groenetenen.ico}" type="image/x-icon">
     <title th:text="${title}"></title>
@@ -17,13 +17,19 @@
             </li>
             <li><a href="#">Werknemers</a>
                 <ul>
-                    <li><a th:href="@{/werknemers}">Lijst</a></li>
+                    <li sec:authorize-url="/werknemers"><a th:href="@{/werknemers}">Lijst</a></li>
                 </ul>
             </li>
             <li><a href="#">Offertes</a>
                 <ul>
                     <li><a th:href="@{/offertes/toevoegen}">Toevoegen</a></li>
                 </ul>
+            </li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{/login}">Aanmelden</a></li>
+            <li sec:authorize="isAuthenticated()">
+                <form method="post" th:action="@{/logout}">
+                    <input type="submit" value="Afmelden">
+                </form>
             </li>
         </ul>
 

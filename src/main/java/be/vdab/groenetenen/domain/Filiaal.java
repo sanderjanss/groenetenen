@@ -87,4 +87,8 @@ public class Filiaal implements Serializable {
     public long getVersie() {
         return versie;
     }
+
+    public void afschrijven() {
+        waardeGebouw = BigDecimal.ZERO;
+    }
 }
